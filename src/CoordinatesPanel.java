@@ -192,12 +192,12 @@ public class CoordinatesPanel extends JPanel {
 		g.setColor(Color.BLACK);
 		
 		for(Line l: lines) { //draw the lines
-			int x1 = 0; // first x
-			int y1 = (int) l.getY(x1); // get Y from X
-			int x2 = (int)(200/l.getSlope()); // second x
-			int y2 = (int) l.getY(x2); //get Y from X
-			int x3 = (int)(-200/l.getSlope()); // third y
-			int y3 = (int) l.getY(x3); //get Y from X
+			int y1 = 0; //first Y
+			int x1 = (int) l.getX(y1); // Get X from Y
+			int y2 = (int) (300/l.getSlope());
+			int x2 = (int) l.getX(y2);
+			int y3 = (int) (-300/l.getSlope());
+			int x3  = (int) l.getX(y3);
 			
 			g.drawLine(xox+x1, yoy-y1, xox+x2, yoy-y2); //draw the upper part
 			g.drawLine(xox+x1, yoy-y1, xox+x3, (yoy-y3)); //draw the lower part
